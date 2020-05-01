@@ -1,0 +1,37 @@
+name: ChatFilter
+version: 1.0
+main: me.taon2.chatfilter.ChatFilter
+description: Filters certain words from the chat messages.
+
+commands:
+    cf:
+        description: Adds, removes, or lists words in the censored words or allowed words lists.
+        usage: /cf <add/remove/list> <censor/allowed> <word> ...
+        
+permissions:
+    cf.*:
+        description: Use all ChatFilter commands.
+        children:
+            cf.add: true
+            cf.remove: true
+            cf.list: true
+            cf.help: true
+            cf.bypass.filter: true
+        default: op
+    cf.add:
+        description: Adds a word to the filtered or always allowed list, making it filtered or always allowed in chat.
+        default: op
+    cf.remove:
+        description: Removes a word from the filtered or allowed list, allowing it to be said in chat or censored fully again.
+        default: op
+    cf.list:
+        description: Lists all of the filtered or always allowed words.
+        default: op
+    cf.help:
+        description: Lists all commands for the chat filter.
+        default: op
+    cf.bypass.filter:
+        description: Lets the player bypass the censoring.
+        default: op
+    
+    
